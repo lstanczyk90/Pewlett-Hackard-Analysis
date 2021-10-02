@@ -13,6 +13,8 @@ To perform this analysis, we leveraged Postgres SQL and created queries that hel
 
 ### **_Retiring Employees Per Title_**
 
+![alt text](https://github.com/lstanczyk90/Pewlett-Hackard-Analysis/blob/454a213b00b0ff340955802b54499728b2945de2/Data/Retiring%20By%20Title.PNG)
+
 As demonstrated in the table above, our analysis yielded the following: 
 
 - The majority of expected-to-retire employees are Senior Engineers (29,414) and Senior Staff (28,254). This is perhaps unsurprising, as these individuals have been at the company longer than those within entry level positions and have been promoted to their current roles. 
@@ -23,9 +25,9 @@ As demonstrated in the table above, our analysis yielded the following:
 
 ### **_Mentorship Program Employees_**
 
-Per review of the above table:
+Per review of the Mentorship Program table:
 
-- The table provides usedful insight as to which employees are mentorship-ready. Additionally, given that this table includes the titles of these employees, we can use this information for further analysis. See the below summary section for additional queries that allow us to compare the numnber of mentorship-ready staff by department to the number of retiring employees.
+- The table provides useful insight as to which employees are mentorship-ready. Additionally, given that this table includes the titles of these employees, we can use this information for further analysis. See the below summary section for additional queries that allow us to compare the numnber of mentorship-ready staff by department to the number of retiring employees.
 
 ## **Summary**
 
@@ -54,6 +56,7 @@ INNER JOIN retiring_titles AS rt ON mt.title = rt.title
 ORDER BY mentors_vs_retiring; 
 ```
 
+![alt text](https://github.com/lstanczyk90/Pewlett-Hackard-Analysis/blob/454a213b00b0ff340955802b54499728b2945de2/Data/Mentors%20and%20Retiring%20Employees.PNG)
 
 
 - As noted within this chart, the negative numbers indicate that there are many more retiring employees than mentors available. Additionally, this trend is especially alarming for entry level staff and engineers, as the ratio is over 70 retiring employees per mentor for both. As such, there may not be enough mentors available for entry level positions.
@@ -74,3 +77,5 @@ SELECT dept_name, AVG(current_age) AS avg_age FROM
 GROUP BY dept_name
 ORDER BY avg_age DESC
 ```
+
+![alt text](https://github.com/lstanczyk90/Pewlett-Hackard-Analysis/blob/454a213b00b0ff340955802b54499728b2945de2/Data/Retiring%20Age%20By%20Department.PNG)
