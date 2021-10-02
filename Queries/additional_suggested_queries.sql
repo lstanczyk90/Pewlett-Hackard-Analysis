@@ -10,7 +10,7 @@ ORDER BY count(*) DESC;
 -- Create a table showing the excess of retiring employees over mentors per department,
 -- as well as the number of mentors per retiring employee
 SELECT mt.title, (mt.emp_retiring - rt.emp_retiring) AS mentors_vs_retiring, 
-	(rt.emp_retiring / mt.emp_retiring) AS mentors_per_retiree
+	(rt.emp_retiring / mt.emp_retiring) AS retirees_per_mentor
 FROM mentorship_title AS mt
 INNER JOIN retiring_titles AS rt ON mt.title = rt.title
 ORDER BY mentors_vs_retiring;
