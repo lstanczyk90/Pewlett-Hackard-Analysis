@@ -50,13 +50,13 @@ ORDER BY count(*) DESC;
 -- as well as the number of mentors per retiring employee
 
 SELECT mt.title, (mt.emp_retiring - rt.emp_retiring) AS mentors_vs_retiring, 
-	(rt.emp_retiring / mt.emp_retiring) AS mentors_per_retiree
+	(rt.emp_retiring / mt.emp_retiring) AS retirees_per_mentor
 FROM mentorship_title AS mt
 INNER JOIN retiring_titles AS rt ON mt.title = rt.title
 ORDER BY mentors_vs_retiring; 
 ```
 
-![alt text](https://github.com/lstanczyk90/Pewlett-Hackard-Analysis/blob/454a213b00b0ff340955802b54499728b2945de2/Data/Mentors%20and%20Retiring%20Employees.PNG)
+![alt text](https://github.com/lstanczyk90/Pewlett-Hackard-Analysis/blob/385d188e6311e16e6e6a997d0d928775c250caed/Data/Mentors%20and%20Retiring%20Employees.PNG)
 
 
 - As noted within this chart, the negative numbers indicate that there are many more retiring employees than mentors available. Additionally, this trend is especially alarming for entry level staff and engineers, as the ratio is over 70 retiring employees per mentor for both. As such, there may not be enough mentors available for entry level positions.
