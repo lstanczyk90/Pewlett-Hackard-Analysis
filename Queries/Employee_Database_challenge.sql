@@ -19,7 +19,7 @@ SELECT count(*) AS emp_retiring, title
 INTO retiring_titles
 	FROM unique_titles
 	GROUP BY title
-	ORDER BY count(*) DESC;
+	ORDER BY emp_retiring DESC;
 
 -- DELIVERABLE 2
 
