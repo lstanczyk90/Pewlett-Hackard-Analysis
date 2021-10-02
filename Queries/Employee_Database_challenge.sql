@@ -15,7 +15,7 @@ INTO unique_titles
 	ORDER BY emp_no, to_date DESC;
 	
 -- Create count of number of employees retiring grouped by title
-SELECT count(*), title
+SELECT count(*) AS emp_retiring, title
 INTO retiring_titles
 	FROM unique_titles
 	GROUP BY title
